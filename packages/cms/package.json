@@ -7,10 +7,12 @@
   },
   "dependencies": {
     "@portfolio/sanity-config": "workspace:*",
-    "@portfolio/shared": "workspace:*"
+    "@portfolio/shared": "workspace:*",
+    "@sanity/client": "^6.28.0",
+    "zod": "^3.24.2"
   },
   "devDependencies": {
-    "typescript": "../..",
-    "jest": "../.."
+    "jest": "../..",
+    "typescript": "../.."
   }
 }

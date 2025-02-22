@@ -23,6 +23,7 @@ const structure = structureTool({
           .documentTypeListItem("portfolioSection")
           .title("Portfolio Sections")
           .icon(ListIcon),
+        s.divider(),
       ]),
 });
 
