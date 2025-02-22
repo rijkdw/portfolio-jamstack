@@ -1,5 +1,5 @@
 {
-  "name": "@monorepo/shared",
+  "name": "@portfolio/shared",
   "version": "0.0.0",
   "scripts": {
     "test": "jest",

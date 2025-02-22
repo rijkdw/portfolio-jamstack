@@ -14,6 +14,8 @@ export default [
       "**/*.config.base.js",
       "**/*.config.js",
       "**/*.config.mjs",
+      "**/*.config.ts",
+      "**/.next",
       ".lintstagedrc.js"
     ],
   },

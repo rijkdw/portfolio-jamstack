@@ -1,9 +1,13 @@
 {
-  "name": "@monorepo/cms",
+  "name": "@portfolio/cms",
   "version": "0.0.0",
   "scripts": {
     "test": "jest",
     "typecheck": "tsc"
+  },
+  "dependencies": {
+    "@portfolio/sanity-config": "workspace:*",
+    "@portfolio/shared": "workspace:*"
   },
   "devDependencies": {
     "typescript": "../..",

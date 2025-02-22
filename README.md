@@ -3,7 +3,7 @@
 ## Project structure guidelines
 
 * `apps`
-    * `/web`:
+    * `/web`
         * Outward-facing Next.js app with Sanity Studio (from `packages/sanity-config`) embedded
 
 * `packages`
@@ -12,7 +12,7 @@
     * `/sanity-config`
         * Schema, plugin, and client configuration for Sanity
         * Provides Sanity Studio as React component to `apps/web`
-    * `/cms`:
+    * `/cms`
         * Platform-agnostic data fetching
         * Depends on `packages/sanity-config`
         * Depends on Sanity so that other apps/packages (notably `apps/web`) doesn't need to
