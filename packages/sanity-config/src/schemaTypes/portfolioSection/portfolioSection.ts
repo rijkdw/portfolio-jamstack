@@ -43,33 +43,7 @@ export default defineType({
       name: "entries",
       title: "Entries",
       type: "array",
-      of: [
-        { type: "portfolioSectionEntry" },
-        {
-          name: "Block content",
-          type: "object",
-          fields: [
-            {
-              name: "content",
-              title: "content",
-              type: "blockContent",
-            },
-          ],
-          preview: {
-            select: {
-              content: "content",
-            },
-            prepare({ content }) {
-              return {
-                title: content
-                  // @ts-expect-error idk how to make this work with the types Sanity expects
-                  .flatMap(({ children }) => children.flatMap((c) => c.text))
-                  .join(" "),
-              };
-            },
-          },
-        },
-      ],
+      of: [{ type: "portfolioSectionEntry" }, { type: "markdownContent" }],
     }),
   ],
   orderings: [
@@ -85,10 +59,10 @@ export default defineType({
       entries: "entries",
     },
     prepare(data) {
-      const n = data.entries.length;
+      const n = (data.entries ?? []).length;
       return {
         title: data.title,
-        subtitle: `${n} ${n > 1 ? "entries" : "entry"}`,
+        subtitle: `${n} ${n === 1 ? "entry" : "entries"}`,
       };
     },
   },

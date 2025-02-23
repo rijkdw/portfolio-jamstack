@@ -1,4 +1,4 @@
-import blockContent from "./blockContent";
+import markdownContent from "./markdownContent";
 import {
   portfolioSection,
   portfolioSectionEntry,
@@ -16,5 +16,5 @@ export const schemaTypes = [
   portfolioSectionEntry,
   portfolioSectionEntryLink,
   // misc
-  blockContent,
+  markdownContent,
 ];

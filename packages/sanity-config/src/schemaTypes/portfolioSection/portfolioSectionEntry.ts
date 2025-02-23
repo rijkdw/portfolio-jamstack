@@ -1,12 +1,10 @@
 import { defineField, defineType } from "sanity";
 import { quickDefineField } from "../utils";
-import { InlineIcon } from "@sanity/icons";
 
 export default defineType({
   name: "portfolioSectionEntry",
-  title: "Entry",
+  title: "Portfolio Section Entry",
   type: "object",
-  icon: InlineIcon,
   fields: [
     quickDefineField("title", "Title", "string", "required"),
     quickDefineField("url", "URL", "url"),
@@ -20,7 +18,7 @@ export default defineType({
         hotspot: true,
       },
     }),
-    quickDefineField("body", "Body", "blockContent", "required"),
+    quickDefineField("body", "Body", "markdown", "required"),
     defineField({
       name: "links",
       title: "Links",

@@ -64,7 +64,7 @@ export default defineType({
       "currentPosition",
       "required"
     ),
-    quickDefineField("footerText", "Footer text", "blockContent", "required"),
+    quickDefineField("footerText", "Footer text", "markdown", "required"),
   ],
   preview: {
     prepare() {

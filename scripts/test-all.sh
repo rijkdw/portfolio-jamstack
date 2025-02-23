@@ -1,10 +1,10 @@
 #!/bin/bash
 
-function print-line (){
+function print-line() {
     echo "=============================================="
 }
 
-function test-one () {
+function test-one() {
     print-line
     echo "Testing $1:"
     print-line
@@ -12,4 +12,5 @@ function test-one () {
 }
 
 test-one ./packages/shared
-test-one ./apps/example-app
+test-one ./packages/cms
+test-one ./packages/sanity-config
