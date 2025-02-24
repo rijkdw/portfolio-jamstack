@@ -1,4 +1,4 @@
-import { MarkdownContent } from "./MarkdownContent";
+import { IconEnum } from "@portfolio/shared/src/enums/IconEnum";
 
 type CurrentPosition = {
   title: string;
@@ -7,12 +7,12 @@ type CurrentPosition = {
 
 type SocialMediaIcon = {
   url: string;
-  icon: string; // TODO enum
+  icon: IconEnum;
 };
 
 export type PortfolioSiteData = {
   name: string;
   socialMediaIcons: SocialMediaIcon[];
   currentPosition: CurrentPosition;
-  footerText: MarkdownContent;
+  footerText: string;
 };

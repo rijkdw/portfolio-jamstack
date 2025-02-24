@@ -1,5 +1,6 @@
 import { defineField, defineType } from "sanity";
 import quickDefineField from "./utils/quickDefineField";
+import { ICON_OPTIONS } from "./constants";
 
 export const currentPosition = defineType({
   name: "currentPosition",
@@ -26,11 +27,7 @@ export const socialMediaIcon = defineType({
       title: "Icon",
       type: "string",
       options: {
-        list: [
-          { value: "github", title: "GitHub" },
-          { value: "linkedin", title: "LinkedIn" },
-          { value: "email", title: "Email" },
-        ],
+        list: ICON_OPTIONS,
       },
       validation: (rule) => rule.required(),
     }),

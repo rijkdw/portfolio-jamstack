@@ -1,4 +1,6 @@
 import { z } from "zod";
+import { IconEnum } from "@portfolio/shared/src/enums/IconEnum";
+import { PortfolioSiteData } from "../types/PortfolioSiteData";
 
 const currentPositionSchema = z.object({
   title: z.string(),
@@ -7,16 +9,14 @@ const currentPositionSchema = z.object({
 
 const socialMediaIconSchema = z.object({
   url: z.string(),
-  icon: z.string(), // TODO enum?
+  icon: z.nativeEnum(IconEnum),
 });
 
-const portfolioSiteDataSchema = z.object({
+const portfolioSiteDataSchema: z.Schema<PortfolioSiteData> = z.object({
   name: z.string(),
   socialMediaIcons: z.array(socialMediaIconSchema),
   currentPosition: currentPositionSchema,
   footerText: z.string(),
 });
-
-export type PortfolioSiteData = z.infer<typeof portfolioSiteDataSchema>;
 
 export default portfolioSiteDataSchema;

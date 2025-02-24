@@ -5,12 +5,13 @@ import {
   PortfolioSectionEntry,
   PortfolioSectionEntryLink,
 } from "../types/PortfolioSection";
+import { IconEnum } from "@portfolio/shared/src/enums/IconEnum";
 
 const portfolioSectionEntryLinkSchema: z.Schema<PortfolioSectionEntryLink> =
   z.object({
     url: z.string().url(),
     text: z.string(),
-    icon: z.string(), // TODO enum?
+    icon: z.nativeEnum(IconEnum),
   });
 
 const portfolioSectionEntrySchema: z.Schema<PortfolioSectionEntry> = z.object({

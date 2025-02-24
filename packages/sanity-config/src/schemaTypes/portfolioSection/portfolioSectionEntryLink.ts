@@ -1,5 +1,6 @@
 import { defineField, defineType } from "sanity";
 import quickDefineField from "../utils/quickDefineField";
+import { ICON_OPTIONS } from "../constants";
 
 export default defineType({
   name: "portfolioSectionEntryLink",
@@ -13,12 +14,7 @@ export default defineType({
       title: "Icon",
       type: "string",
       options: {
-        list: [
-          { value: "github", title: "GitHub" },
-          { value: "linkedin", title: "LinkedIn" },
-          { value: "email", title: "Email" },
-          { value: "link", title: "Link" },
-        ],
+        list: ICON_OPTIONS,
       },
       initialValue: "link",
       validation: (rule) => rule.required(),
