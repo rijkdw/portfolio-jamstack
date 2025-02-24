@@ -1,11 +1,11 @@
 import { IconEnum } from "@portfolio/shared/src/enums/IconEnum";
 
-type CurrentPosition = {
+export type CurrentPosition = {
   title: string;
   company: string;
 };
 
-type SocialMediaIcon = {
+export type SocialMediaIcon = {
   url: string;
   icon: IconEnum;
 };

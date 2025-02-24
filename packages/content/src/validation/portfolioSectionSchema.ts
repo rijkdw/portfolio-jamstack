@@ -15,6 +15,7 @@ const portfolioSectionEntryLinkSchema: z.Schema<PortfolioSectionEntryLink> =
   });
 
 const portfolioSectionEntrySchema: z.Schema<PortfolioSectionEntry> = z.object({
+  type: z.literal("portfolioSectionEntry"),
   title: z.string(),
   url: z.string().url().optional(),
   subtitle: z.string().optional(),

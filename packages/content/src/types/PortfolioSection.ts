@@ -8,6 +8,7 @@ export type PortfolioSection = {
 };
 
 export type PortfolioSectionEntry = {
+  type: "portfolioSectionEntry";
   title: string;
   url?: string;
   subtitle?: string;

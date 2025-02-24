@@ -1,6 +1,6 @@
 import { ZodError } from "zod";
 
-export default function validate(schema: Zod.Schema, data: unknown) {
+export default function validate<T>(schema: Zod.Schema<T>, data: unknown): T {
   try {
     return schema.parse(data);
   } catch (error) {

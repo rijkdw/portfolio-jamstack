@@ -11,6 +11,8 @@ const SITE_DATA_QUERY = `
 `;
 
 export default async function getSiteData() {
-  const result = await sanityClient.fetch(SITE_DATA_QUERY);
-  return validate(portfolioSiteDataSchema, result);
+  return validate(
+    portfolioSiteDataSchema,
+    await sanityClient.fetch(SITE_DATA_QUERY)
+  );
 }

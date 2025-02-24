@@ -8,9 +8,11 @@ const SECTIONS_QUERY = `
   "slug": slug.current,
   "entries": entries[] {
     _type == "markdownContent" => {
+      "type": "markdownContent",
       ...
     },
     _type == "portfolioSectionEntry" => {
+      "type": "portfolioSectionEntry",
       ...,
       "links": coalesce(links, []),
       "tags": coalesce(tags, []),
@@ -20,6 +22,8 @@ const SECTIONS_QUERY = `
 `;
 
 export default async function getSections() {
-  const result = await sanityClient.fetch(SECTIONS_QUERY);
-  return validate(portfolioSectionSchema.array(), result);
+  return validate(
+    portfolioSectionSchema.array(),
+    await sanityClient.fetch(SECTIONS_QUERY)
+  );
 }
