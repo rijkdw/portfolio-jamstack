@@ -12,7 +12,7 @@ const config: Config = {
         "everforest-green": {
           normal: "#a6bf7f",
           dim: "#869a66",
-          bright: "#91bf47",
+          bright: "#c2e092",
         },
         "everforest-fg": {
           normal: "#b3a891",

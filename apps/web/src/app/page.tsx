@@ -1,7 +1,8 @@
 import { fetchSections, fetchSiteData } from "@portfolio/content";
-import PortfolioHeader from "./portfolioPageComponents/PortfolioHeader";
-import PortfolioSubtitle from "./portfolioPageComponents/PortfolioSubtitle";
-import PortfolioSection from "./portfolioPageComponents/PortfolioSection";
+import PortfolioTitle from "../components/portfolioPage/PortfolioTitle";
+import PortfolioSubtitle from "../components/portfolioPage/PortfolioSubtitle";
+import PortfolioSection from "../components/portfolioPage/PortfolioSection";
+import PortfolioSocialMediaIcon from "_/components/portfolioPage/PortfolioSocialMediaIcon";
 
 export default async function Home() {
   const sections = await fetchSections();
@@ -9,18 +10,25 @@ export default async function Home() {
 
   return (
     <div>
-      <PortfolioHeader>{siteData.name}</PortfolioHeader>
-      <PortfolioSubtitle>
-        <PortfolioSubtitle.Strong>
-          {siteData.currentPosition.title}
-        </PortfolioSubtitle.Strong>
-        {" at "}
-        <PortfolioSubtitle.Strong>
-          {siteData.currentPosition.company}
-        </PortfolioSubtitle.Strong>
-      </PortfolioSubtitle>
+      <header>
+        <PortfolioTitle>{siteData.name}</PortfolioTitle>
+        <PortfolioSubtitle>
+          <PortfolioSubtitle.Strong>
+            {siteData.currentPosition.title}
+          </PortfolioSubtitle.Strong>
+          {" at "}
+          <PortfolioSubtitle.Strong>
+            {siteData.currentPosition.company}
+          </PortfolioSubtitle.Strong>
+        </PortfolioSubtitle>
+        <PortfolioSocialMediaIcon.Row>
+          {siteData.socialMediaIcons.map(({ icon, url }) => (
+            <PortfolioSocialMediaIcon key={url + icon} icon={icon} url={url} />
+          ))}
+        </PortfolioSocialMediaIcon.Row>
+      </header>
 
-      <div className="flex flex-col gap-12">
+      <div className="flex flex-col gap-16">
         {sections.map((section) => (
           <PortfolioSection key={section.slug} section={section} />
         ))}

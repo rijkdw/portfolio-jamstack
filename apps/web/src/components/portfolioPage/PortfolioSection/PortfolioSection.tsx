@@ -5,6 +5,7 @@ import {
 import { MarkdownContent } from "@portfolio/content/src/types/MarkdownContent";
 import PortfolioSectionTitle from "./PortfolioSectionTitle";
 import PortfolioSectionEntryComponent from "./PortfolioSectionEntry";
+import PortfolioSectionMarkdownContent from "./PortfolioSectionMarkdownContent";
 
 type Props = {
   section: PortfolioSection;
@@ -14,12 +15,14 @@ export default function PortfolioSection({ section }: Props) {
   const { entries, slug, title } = section;
 
   return (
-    <div className="flex flex-col gap-4">
+    <section className="flex flex-col">
       <PortfolioSectionTitle id={slug}>{title}</PortfolioSectionTitle>
-      {entries.map((item) => (
-        <PortfolioSectionEntryWrapper key={getKey(item)} item={item} />
-      ))}
-    </div>
+      <div className="flex flex-col gap-8 mt-4">
+        {entries.map((item) => (
+          <PortfolioSectionChildWrapper key={getKey(item)} item={item} />
+        ))}
+      </div>
+    </section>
   );
 }
 
@@ -36,10 +39,14 @@ function getKey(item: PortfolioSectionEntryType | MarkdownContent) {
 
 type WrapperProps = { item: PortfolioSectionEntryType | MarkdownContent };
 
-function PortfolioSectionEntryWrapper({ item }: WrapperProps) {
+function PortfolioSectionChildWrapper({ item }: WrapperProps) {
   switch (item.type) {
     case "markdownContent":
-      return <p>{item.content}</p>;
+      return (
+        <PortfolioSectionMarkdownContent>
+          {item.content}
+        </PortfolioSectionMarkdownContent>
+      );
     case "portfolioSectionEntry":
       return <PortfolioSectionEntryComponent entry={item} />;
     default:
