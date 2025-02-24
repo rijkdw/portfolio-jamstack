@@ -1,3 +1,3 @@
-import sanityCli from "./src/sanityCli";
+import sanityCli from "./src/sanityConfigs/sanityCli";
 
 export default sanityCli;

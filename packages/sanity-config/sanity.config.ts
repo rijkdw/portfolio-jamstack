@@ -1,3 +1,3 @@
-import sanityConfig from "./src/sanityConfig";
+import sanityConfig from "./src/sanityConfigs/sanityConfig";
 
 export default sanityConfig;

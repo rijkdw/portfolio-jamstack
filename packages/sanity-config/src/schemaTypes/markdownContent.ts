@@ -11,4 +11,10 @@ export default defineType({
       title: "Content",
     }),
   ],
+  preview: {
+    select: { content: "content" },
+    prepare: ({ content }) => ({
+      title: content,
+    }),
+  },
 });

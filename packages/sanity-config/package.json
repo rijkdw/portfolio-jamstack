@@ -2,7 +2,7 @@
   "name": "@portfolio/sanity-config",
   "version": "0.0.0",
   "scripts": {
-    "dev": "sanity dev",
+    "dev": "env-cmd -f ../../development.env sanity dev",
     "test": "jest",
     "typecheck": "tsc"
   },
@@ -11,6 +11,7 @@
     "typescript": "../.."
   },
   "dependencies": {
+    "@portfolio/shared": "workspace:*",
     "@sanity/icons": "^3.6.0",
     "@sanity/vision": "^3.76.3",
     "sanity": "^3.76.3",

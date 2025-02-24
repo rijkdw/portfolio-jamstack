@@ -1,5 +1,5 @@
 import { defineField, defineType } from "sanity";
-import { quickDefineField } from "../utils";
+import quickDefineField from "../utils/quickDefineField";
 
 export default defineType({
   name: "portfolioSectionEntry",

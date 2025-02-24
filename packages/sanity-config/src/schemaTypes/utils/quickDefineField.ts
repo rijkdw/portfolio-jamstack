@@ -1,18 +1,18 @@
 import { defineField } from "sanity";
 
-enum OptionEnum {
+enum DefineFieldOptionEnum {
   required = "required",
 }
 
-type Option = `${OptionEnum}`;
+type DefineFieldOption = `${DefineFieldOptionEnum}`;
 
-export function quickDefineField(
+export default function quickDefineField(
   name: string,
   title: string,
   type: string,
-  ...options: Option[]
+  ...options: DefineFieldOption[]
 ) {
-  const required = options.includes(OptionEnum.required);
+  const required = options.includes(DefineFieldOptionEnum.required);
 
   return defineField({
     name,

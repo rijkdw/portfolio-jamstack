@@ -6,7 +6,10 @@
     "typecheck": "pnpm tsc"
   },
   "devDependencies": {
-    "typescript": "../..",
-    "jest": "../.."
+    "jest": "../..",
+    "typescript": "../.."
+  },
+  "dependencies": {
+    "zod": "^3.24.2"
   }
 }

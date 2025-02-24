@@ -2,15 +2,6 @@ import { defineField, defineType } from "sanity";
 import { MAX_SLUG_LENGTH } from "../constants";
 import { ListIcon } from "@sanity/icons";
 
-export const blockContents = defineType({
-  name: "blockContents",
-  title: "Block Contents",
-  type: "object",
-  fields: [
-    defineField({ name: "blocks", title: "Blocks", type: "blockContent" }),
-  ],
-});
-
 export default defineType({
   name: "portfolioSection",
   title: "Portfolio section",
@@ -44,6 +35,7 @@ export default defineType({
       title: "Entries",
       type: "array",
       of: [{ type: "portfolioSectionEntry" }, { type: "markdownContent" }],
+      validation: (rule) => rule.min(1),
     }),
   ],
   orderings: [

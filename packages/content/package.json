@@ -1,5 +1,5 @@
 {
-  "name": "@portfolio/cms",
+  "name": "@portfolio/content",
   "version": "0.0.0",
   "scripts": {
     "test": "jest",
@@ -9,9 +9,11 @@
     "@portfolio/sanity-config": "workspace:*",
     "@portfolio/shared": "workspace:*",
     "@sanity/client": "^6.28.0",
+    "react": "^19.0.0",
     "zod": "^3.24.2"
   },
   "devDependencies": {
+    "@types/react": "^19",
     "jest": "../..",
     "typescript": "../.."
   }

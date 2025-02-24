@@ -1,9 +1,12 @@
 import { defineCliConfig } from "sanity/cli";
+import sanitizeEnv from "./sanitizeEnv";
+
+const { SANITY_DATASET, SANITY_PROJECT } = sanitizeEnv(process.env);
 
 export default defineCliConfig({
   api: {
-    projectId: "sjpys6vt",
-    dataset: "production",
+    projectId: SANITY_PROJECT,
+    dataset: SANITY_DATASET,
   },
   /**
    * Enable auto-updates for studios.

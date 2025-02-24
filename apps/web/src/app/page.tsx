@@ -1,4 +1,4 @@
-import { fetchSections, fetchSiteData } from "@portfolio/cms";
+import { fetchSections, fetchSiteData } from "@portfolio/content";
 
 export default async function Home() {
   const sections = await fetchSections();

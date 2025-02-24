@@ -3,7 +3,7 @@ import { portfolioSectionSchema } from "../validation";
 import validate from "../validation/validate";
 
 const SECTIONS_QUERY = `
-*[_type == "portfolioSection"] | order(weight desc) {
+*[_type == "portfolioSection" && length(entries) > 0] | order(weight desc) {
   ...,
   "slug": slug.current,
   "entries": entries[] {

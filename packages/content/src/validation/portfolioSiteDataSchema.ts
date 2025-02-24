@@ -14,7 +14,7 @@ const portfolioSiteDataSchema = z.object({
   name: z.string(),
   socialMediaIcons: z.array(socialMediaIconSchema),
   currentPosition: currentPositionSchema,
-  footerText: z.any(), // TODO figure out wtf
+  footerText: z.string(),
 });
 
 export type PortfolioSiteData = z.infer<typeof portfolioSiteDataSchema>;
