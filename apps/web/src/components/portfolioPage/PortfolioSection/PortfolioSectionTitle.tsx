@@ -4,7 +4,6 @@ type Props = {
 };
 
 export default function PortfolioSectionTitle({ children, id }: Props) {
-  // TODO verify letter spacing
   return (
     <h2
       id={id}

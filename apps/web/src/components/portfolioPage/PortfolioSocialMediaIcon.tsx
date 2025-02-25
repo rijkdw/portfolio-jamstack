@@ -17,12 +17,14 @@ type Props = {
 
 export default function PortfolioSocialMediaIcon({ icon, url }: Props) {
   return (
-    <a href={url} target="_blank">
-      <FontAwesomeIcon
-        className="w-8 text-everforest-fg-normal"
-        icon={getIconDefinition(icon)}
-      />
-    </a>
+    <li>
+      <a href={url} target="_blank">
+        <FontAwesomeIcon
+          className="w-8 text-everforest-fg-normal"
+          icon={getIconDefinition(icon)}
+        />
+      </a>
+    </li>
   );
 }
 
@@ -41,8 +43,8 @@ function getIconDefinition(icon: IconProp): IconDefinition {
   }
 }
 
-function PortfolioSocialMediaIconRow({ children }: PropsWithChildren) {
-  return <div className="flex flex-row gap-5 items-center">{children}</div>;
+function PortfolioSocialMediaIconList({ children }: PropsWithChildren) {
+  return <ul className="flex flex-row gap-5 items-center">{children}</ul>;
 }
 
-PortfolioSocialMediaIcon.Row = PortfolioSocialMediaIconRow;
+PortfolioSocialMediaIcon.List = PortfolioSocialMediaIconList;

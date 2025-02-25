@@ -46,7 +46,7 @@ export default function PortfolioSectionEntry({ entry }: Props) {
       </div>
 
       {links.length > 0 && (
-        <ul className="list-none flex gap-3 gap-y-0 flex-wrap mt-3">
+        <ul className="list-none flex gap-3 gap-y-0 flex-wrap mt-1">
           {links.map((link, index) => (
             <a
               className="font-bold text-everforest-fg-bright flex flex-row gap-1"
@@ -65,7 +65,7 @@ export default function PortfolioSectionEntry({ entry }: Props) {
         <ul className="list-none flex gap-2 flex-wrap mt-3">
           {tags.map((tag, index) => (
             <li
-              className="bg-everforest-green-dim rounded-full text-everforest-bg-normal px-3 py-1 font-mono text-[0.9rem] font-bold"
+              className="bg-everforest-green-dim rounded-full text-everforest-bg-normal px-3 py-[2px] font-mono text-[0.9rem] font-bold"
               key={tag + index}
             >
               {tag}
@@ -77,7 +77,7 @@ export default function PortfolioSectionEntry({ entry }: Props) {
   );
 
   return (
-    <div className="flex flex-row w-full">
+    <div className="sm:flex sm:flex-row w-full">
       <Left />
       <Right />
     </div>

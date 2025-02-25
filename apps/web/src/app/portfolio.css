@@ -1,0 +1,25 @@
+body {
+  background-image: linear-gradient(to bottom right, #2e383c, #1d2326);
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+/* Width of the scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1d2326;
+}
+
+/* Handle (the draggable part) */
+::-webkit-scrollbar-thumb {
+  background: #3a464c;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555f66;
+}
