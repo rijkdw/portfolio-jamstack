@@ -13,7 +13,7 @@ export default async function Home() {
   const siteData = await fetchSiteData();
 
   return (
-    <div className="max-w-[1000px] mx-20 lg:mx-auto lg:flex flex-row py-16 gap-20">
+    <div className="max-w-[1128px] px-8 sm:px-16 py-10 sm:py-20 mx-auto lg:flex flex-row gap-20">
       {/* Left */}
       <div className="flex flex-col justify-between flex-1 lg:sticky lg:top-20 lg:h-[80vh]">
         {/* Header and nav */}
@@ -41,7 +41,8 @@ export default async function Home() {
           </header>
           <PortfolioNavbar sections={sections} />
         </div>
-        <PortfolioFooter className="hidden lg:block">
+
+        <PortfolioFooter className="hidden lg:block w-4/5">
           {siteData.footerText}
         </PortfolioFooter>
       </div>

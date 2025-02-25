@@ -16,6 +16,7 @@ const SECTIONS_QUERY = `
       ...,
       "links": coalesce(links, []),
       "tags": coalesce(tags, []),
+      image != null => {"image": image.asset->url},
     }
   }
 }

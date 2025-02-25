@@ -20,7 +20,7 @@ export default function PortfolioSocialMediaIcon({ icon, url }: Props) {
     <li>
       <a href={url} target="_blank">
         <FontAwesomeIcon
-          className="w-8 text-everforest-fg-normal"
+          className="w-6 sm:w-8 text-everforest-fg-normal hover:text-everforest-green-bright hover:scale-105 duration-100"
           icon={getIconDefinition(icon)}
         />
       </a>

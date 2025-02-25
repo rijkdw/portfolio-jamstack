@@ -9,14 +9,17 @@ type Props = {
 export default function PortfolioNavbar({ sections }: Props) {
   return (
     <nav className="hidden lg:block">
-      <ul>
+      <ul className="list-none flex flex-col gap-2">
         {sections.map(({ title, slug }) => {
           const href = `#${slug}`;
           return (
             <li key={slug}>
-              <p className="uppercase text-everforest-fg-dim font-semibold tracking-[2px]">
-                <a href={href}>{title}</a>
-              </p>
+              <a
+                className="uppercase text-everforest-fg-dim hover:text-everforest-green-bright font-semibold tracking-[2px] duration-100"
+                href={href}
+              >
+                {title}
+              </a>
             </li>
           );
         })}

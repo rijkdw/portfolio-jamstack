@@ -15,7 +15,7 @@ export default function PortfolioSectionEntryTitle({ title, url }: Props) {
   return (
     <h3 className={`${baseH3Classes} text-everforest-green-normal`}>
       <a
-        className="hover:text-everforest-green-bright"
+        className="hover:text-everforest-green-bright duration-100"
         href={url}
         target="_blank"
       >

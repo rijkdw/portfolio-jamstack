@@ -3,7 +3,6 @@ import {
   type PortfolioSection,
 } from "@portfolio/content/src/types/PortfolioSection";
 import { MarkdownContent } from "@portfolio/content/src/types/MarkdownContent";
-import PortfolioSectionTitle from "./PortfolioSectionTitle";
 import PortfolioSectionEntryComponent from "./PortfolioSectionEntry";
 import PortfolioSectionMarkdownContent from "./PortfolioSectionMarkdownContent";
 
@@ -15,9 +14,11 @@ export default function PortfolioSection({ section }: Props) {
   const { entries, slug, title } = section;
 
   return (
-    <section className="flex flex-col">
-      <PortfolioSectionTitle id={slug}>{title}</PortfolioSectionTitle>
-      <div className="flex flex-col gap-8 mt-4">
+    <section id={slug} className="flex flex-col">
+      <h2 className="uppercase text-everforest-fg-bright font-bold text-lg tracking-[2px]">
+        {title}
+      </h2>
+      <div className="flex flex-col gap-12 mt-4">
         {entries.map((item) => (
           <PortfolioSectionChildWrapper key={getKey(item)} item={item} />
         ))}

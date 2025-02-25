@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Roboto, Roboto_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -17,6 +17,11 @@ const robotoMono = Roboto_Mono({
 export const metadata: Metadata = {
   title: "Rijk de Wet",
   description: "Rijk de Wet's portfolio and blog",
+};
+
+export const viewport: Viewport = {
+  colorScheme: "dark",
+  themeColor: "#999999",
 };
 
 export default function RootLayout({

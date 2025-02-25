@@ -20,7 +20,7 @@ const portfolioSectionEntrySchema: z.Schema<PortfolioSectionEntry> = z.object({
   url: z.string().url().optional(),
   subtitle: z.string().optional(),
   date: z.string().optional(),
-  image: z.string().optional(), // TODO verify wtf
+  image: z.string().optional(),
   body: z.string(),
   links: z.array(portfolioSectionEntryLinkSchema),
   tags: z.array(z.string()),

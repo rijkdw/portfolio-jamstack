@@ -36,10 +36,11 @@ export default defineType({
     select: {
       title: "title",
       subtitle: "subtitle",
+      media: "image",
     },
-    prepare(data) {
-      data.subtitle = data.subtitle ?? "(no subtitle)";
-      return data;
-    },
+    prepare: (data) => ({
+      ...data,
+      subtitle: data.subtitle ?? "(no subtitle)",
+    }),
   },
 });

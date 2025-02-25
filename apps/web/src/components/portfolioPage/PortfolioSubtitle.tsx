@@ -2,7 +2,7 @@ import { PropsWithChildren } from "react";
 
 export default function PortfolioSubtitle({ children }: PropsWithChildren) {
   return (
-    <p className="text-everforest-fg-dim font-normal text-2xl mb-5">
+    <p className="text-everforest-fg-dim font-normal text-xl sm:text-2xl mb-5">
       {children}
     </p>
   );

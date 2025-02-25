@@ -3,6 +3,7 @@ import PortfolioSectionEntryTitle from "./PortfolioSectionEntryTitle";
 import Markdown from "react-markdown";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLink } from "@fortawesome/free-solid-svg-icons";
+import Image from "next/image";
 
 type Props = {
   entry: PortfolioSectionEntry;
@@ -16,7 +17,13 @@ export default function PortfolioSectionEntry({ entry }: Props) {
   const Left = () => (
     <div className="flex-[2]">
       {hasImage ? (
-        <img src={image} />
+        <Image
+          className="border-everforest-green-normal border-2 rounded-sm hidden sm:block w-60 lg:w-full mt-1"
+          src={image}
+          alt={title}
+          width={300}
+          height={0}
+        />
       ) : (
         <p className="uppercase text-everforest-fg-dim">{date}</p>
       )}
@@ -77,9 +84,18 @@ export default function PortfolioSectionEntry({ entry }: Props) {
   );
 
   return (
-    <div className="sm:flex sm:flex-row w-full">
+    <div className="sm:flex sm:flex-row gap-4 w-full">
       <Left />
       <Right />
+      {hasImage && (
+        <Image
+          className="border-everforest-green-normal border-2 rounded-sm sm:hidden max-w-60 w-full mt-4"
+          src={image}
+          alt={title}
+          width={300}
+          height={0}
+        />
+      )}
     </div>
   );
 }
