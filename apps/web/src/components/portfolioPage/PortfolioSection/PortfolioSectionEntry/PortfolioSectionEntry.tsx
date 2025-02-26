@@ -55,15 +55,16 @@ export default function PortfolioSectionEntry({ entry }: Props) {
       {links.length > 0 && (
         <ul className="list-none flex gap-3 gap-y-0 flex-wrap mt-1">
           {links.map((link, index) => (
-            <a
-              className="font-bold text-everforest-fg-bright flex flex-row gap-1"
-              key={link.url + index}
-              href={link.url}
-              target="_blank"
-            >
-              <FontAwesomeIcon className="w-4" icon={faLink} />
-              <p>{link.text}</p>
-            </a>
+            <li key={link.url + index}>
+              <a
+                className="font-bold text-everforest-fg-bright hover:text-everforest-green-bright duration-100 flex flex-row gap-1"
+                href={link.url}
+                target="_blank"
+              >
+                <FontAwesomeIcon className="w-4" icon={faLink} />
+                <p>{link.text}</p>
+              </a>
+            </li>
           ))}
         </ul>
       )}

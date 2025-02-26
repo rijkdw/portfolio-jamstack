@@ -8,7 +8,9 @@ export default function validateEnvironmentVariables(
     return environmentVariablesSchema.parse(env);
   } catch (error) {
     if (error instanceof ZodError) {
-      throw new Error("Environment variables do not match schema");
+      throw new Error(
+        `Environment variables do not match schema:\n${JSON.stringify(env)}`
+      );
     } else {
       throw error;
     }
