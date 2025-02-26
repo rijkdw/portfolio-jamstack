@@ -5,10 +5,6 @@ import { schemaTypes } from "../schemaTypes";
 import { EarthGlobeIcon, ListIcon } from "@sanity/icons";
 import { media } from "sanity-plugin-media";
 import { markdownSchema } from "sanity-plugin-markdown";
-import sanitizeEnv from "./sanitizeEnv";
-
-// TODO dirty dirty dirty
-const { SANITY_DATASET, SANITY_PROJECT } = sanitizeEnv(process.env);
 
 const structure = structureTool({
   structure: (s) =>
@@ -34,16 +30,18 @@ const structure = structureTool({
       ]),
 });
 
-export default defineConfig({
-  name: "default",
-  title: "Portfolio",
+type Params = { projectId: string; dataset: string };
 
-  projectId: SANITY_PROJECT,
-  dataset: SANITY_DATASET,
+export default function buildSanityConfig(params: Params) {
+  return defineConfig({
+    name: "default",
+    title: "Portfolio",
+    ...params,
 
-  plugins: [structure, visionTool(), media(), markdownSchema()],
+    plugins: [structure, visionTool(), media(), markdownSchema()],
 
-  schema: {
-    types: schemaTypes,
-  },
-});
+    schema: {
+      types: schemaTypes,
+    },
+  });
+}

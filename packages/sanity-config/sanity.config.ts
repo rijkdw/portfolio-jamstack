@@ -1,3 +1,8 @@
-import sanityConfig from "./src/sanityConfigs/sanityConfig";
+import buildSanityConfig from "./src/sanityConfigs/buildSanityConfig";
 
-export default sanityConfig;
+const { SANITY_DATASET, SANITY_PROJECT } = process.env;
+
+export default buildSanityConfig({
+  dataset: SANITY_DATASET,
+  projectId: SANITY_PROJECT,
+});
