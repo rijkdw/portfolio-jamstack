@@ -17,13 +17,15 @@
     "@portfolio/content": "workspace:*",
     "@portfolio/sanity-config": "workspace:*",
     "@portfolio/shared": "workspace:*",
+    "@sanity/ui": "^2.14.3",
     "@sanity/vision": "3.76.3",
     "next": "15.1.7",
     "next-sanity": "^9.8.60",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-markdown": "^10.0.0",
-    "sanity": "3.76.3"
+    "sanity": "3.76.3",
+    "use-http": "^1.0.28"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

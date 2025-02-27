@@ -2,23 +2,37 @@
 
 import buildSanityConfig from "@portfolio/sanity-config/src/sanityConfigs/buildSanityConfig";
 import { NextStudio } from "next-sanity/studio";
-
-import "./studio.css";
+import StudioComponentHeader from "./StudioComponentHeader";
+import { NavbarProps } from "sanity";
 
 type Props = {
   projectId: string;
   dataset: string;
+  homeUrl?: string;
+  revalidateUrl?: string;
 };
 
-export default function StudioComponent({ dataset, projectId }: Props) {
-  const config = buildSanityConfig({ projectId, dataset });
+export default function StudioComponent({
+  dataset,
+  projectId,
+  homeUrl,
+  revalidateUrl,
+}: Props) {
+  const config = buildSanityConfig({
+    projectId,
+    dataset,
+    studioComponents: {
+      navbar: (props: NavbarProps) => (
+        <StudioComponentHeader
+          dataset={dataset}
+          projectId={projectId}
+          homeUrl={homeUrl}
+          revalidateUrl={revalidateUrl}
+          {...props}
+        />
+      ),
+    },
+  });
 
-  return (
-    <div>
-      <p className="text-center mb-2 text-slate-400 h-[2vh]">
-        dataset={dataset}&emsp;&emsp;projectId={projectId}
-      </p>
-      <NextStudio basePath="/studio" config={config} />
-    </div>
-  );
+  return <NextStudio basePath="/studio" config={config} />;
 }

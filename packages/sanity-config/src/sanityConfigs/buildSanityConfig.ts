@@ -1,4 +1,4 @@
-import { defineConfig } from "sanity";
+import { defineConfig, StudioComponentsPluginOptions } from "sanity";
 import { structureTool } from "sanity/structure";
 import { visionTool } from "@sanity/vision";
 import { schemaTypes } from "../schemaTypes";
@@ -30,18 +30,28 @@ const structure = structureTool({
       ]),
 });
 
-type Params = { projectId: string; dataset: string };
+type Params = {
+  projectId: string;
+  dataset: string;
+  studioComponents?: StudioComponentsPluginOptions;
+};
 
-export default function buildSanityConfig(params: Params) {
+export default function buildSanityConfig({
+  studioComponents,
+  ...rest
+}: Params) {
   return defineConfig({
     name: "default",
     title: "Portfolio",
-    ...params,
+    ...rest,
 
     plugins: [structure, visionTool(), media(), markdownSchema()],
 
     schema: {
       types: schemaTypes,
+    },
+    studio: {
+      components: studioComponents,
     },
   });
 }

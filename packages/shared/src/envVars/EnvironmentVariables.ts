@@ -3,4 +3,6 @@ export type EnvironmentVariables = {
   SANITY_DATASET: string;
   SANITY_PROJECT: string;
   SANITY_API_VERSION: string;
+  STUDIO_HOMEPAGE_URL?: string;
+  STUDIO_REVALIDATE_URL?: string;
 };
