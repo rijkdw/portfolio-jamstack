@@ -1,14 +1,12 @@
 import { type PortfolioSection as PortfolioSectionType } from "@portfolio/content/src/types/PortfolioSection";
 import { type PortfolioSiteData } from "@portfolio/content/src/types/PortfolioSiteData";
 
-import PortfolioTitle from "./PortfolioTitle";
-import PortfolioSubtitle from "./PortfolioSubtitle";
-import PortfolioSection from "./PortfolioSection";
-import PortfolioSocialMediaIcon from "./PortfolioSocialMediaIcon";
-import PortfolioNavbar from "./PortfolioNavbar";
-import PortfolioFooter from "./PortfolioFooter";
-
-import "./portfolio.css";
+import PortfolioTitle from "../components/portfolioPage/PortfolioTitle";
+import PortfolioSubtitle from "../components/portfolioPage/PortfolioSubtitle";
+import PortfolioSection from "../components/portfolioPage/PortfolioSection";
+import PortfolioSocialMediaIcon from "../components/portfolioPage/PortfolioSocialMediaIcon";
+import PortfolioNavbar from "../components/portfolioPage/PortfolioNavbar";
+import PortfolioFooter from "../components/portfolioPage/PortfolioFooter";
 
 type Props = {
   sections: PortfolioSectionType[];
