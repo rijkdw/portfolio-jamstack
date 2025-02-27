@@ -49,7 +49,7 @@ function PortfolioSectionChildWrapper({ item }: WrapperProps) {
         </PortfolioSectionMarkdownContent>
       );
     case "portfolioSectionEntry":
-      return <PortfolioSectionEntryComponent entry={item} />;
+      return <PortfolioSectionEntryComponent {...item} />;
     default:
       throw new Error("");
   }

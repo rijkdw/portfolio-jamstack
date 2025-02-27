@@ -24,7 +24,7 @@ export default function PortfolioSectionEntryTitle({ title, url }: Props) {
       >
         {title}
         <FontAwesomeIcon
-          className="w-3 ml-[0.35rem] -rotate-45 group-hover:translate-x-1 group-hover:-translate-y-1 duration-100 inline"
+          className="w-3 ml-2 mb-1 -rotate-45 opacity-75 duration-100 inline group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:scale-[1.15]"
           icon={faArrowRight}
         />
       </a>

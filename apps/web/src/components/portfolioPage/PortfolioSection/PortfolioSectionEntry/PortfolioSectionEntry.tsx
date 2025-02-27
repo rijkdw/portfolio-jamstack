@@ -5,18 +5,28 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLink } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
 
-type Props = {
-  entry: PortfolioSectionEntry;
-};
+export default function PortfolioSectionEntry(props: PortfolioSectionEntry) {
+  return (
+    <div className="sm:flex sm:flex-row gap-4 w-full">
+      <LeftPane {...props} />
+      <RightPane {...props} />
+      {props.image && (
+        <Image
+          className="border-everforest-green-normal border-2 rounded-sm sm:hidden max-w-60 w-full mt-4"
+          src={props.image}
+          alt={props.title}
+          width={300}
+          height={0}
+        />
+      )}
+    </div>
+  );
+}
 
-export default function PortfolioSectionEntry({ entry }: Props) {
-  const { body, date, image, links, subtitle, tags, title, url } = entry;
-
-  const hasImage = !!image;
-
-  const Left = () => (
+function LeftPane({ image, title, date }: PortfolioSectionEntry) {
+  return (
     <div className="flex-[2]">
-      {hasImage ? (
+      {image ? (
         <Image
           className="border-everforest-green-normal border-2 rounded-sm hidden sm:block w-60 lg:w-full mt-1"
           src={image}
@@ -29,16 +39,24 @@ export default function PortfolioSectionEntry({ entry }: Props) {
       )}
     </div>
   );
+}
 
-  const Right = () => (
+function RightPane({
+  title,
+  subtitle,
+  url,
+  body,
+  links,
+  tags,
+}: PortfolioSectionEntry) {
+  return (
     <div className="flex-[5]">
       <PortfolioSectionEntryTitle title={title} url={url} />
-
       {subtitle && (
         <p className="font-[1.05rem] text-everforest-fg-dim">{subtitle}</p>
       )}
 
-      <div className="mt-3">
+      <div className="mt-2">
         <Markdown
           components={{
             p: ({ children }) => (
@@ -53,7 +71,7 @@ export default function PortfolioSectionEntry({ entry }: Props) {
       </div>
 
       {links.length > 0 && (
-        <ul className="list-none flex gap-3 gap-y-0 flex-wrap mt-1">
+        <ul className="list-none flex gap-3 gap-y-0 flex-wrap mt-3">
           {links.map((link, index) => (
             <li key={link.url + index}>
               <a
@@ -73,29 +91,13 @@ export default function PortfolioSectionEntry({ entry }: Props) {
         <ul className="list-none flex gap-2 flex-wrap mt-3">
           {tags.map((tag, index) => (
             <li
-              className="bg-everforest-green-dim rounded-full text-everforest-bg-normal px-3 py-[2px] font-mono text-[0.9rem] font-bold"
+              className="bg-everforest-green-dim opacity-75 rounded-full text-everforest-bg-normal px-3 py-[2px] font-mono text-[0.9rem] font-bold"
               key={tag + index}
             >
               {tag}
             </li>
           ))}
         </ul>
-      )}
-    </div>
-  );
-
-  return (
-    <div className="sm:flex sm:flex-row gap-4 w-full">
-      <Left />
-      <Right />
-      {hasImage && (
-        <Image
-          className="border-everforest-green-normal border-2 rounded-sm sm:hidden max-w-60 w-full mt-4"
-          src={image}
-          alt={title}
-          width={300}
-          height={0}
-        />
       )}
     </div>
   );

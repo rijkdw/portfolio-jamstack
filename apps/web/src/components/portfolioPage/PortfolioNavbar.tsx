@@ -17,11 +17,11 @@ export default function PortfolioNavbar({ sections }: Props) {
           return (
             <li key={slug}>
               <a
-                className="uppercase text-everforest-fg-dim hover:text-everforest-green-bright hover:opacity-100 duration-100 font-semibold tracking-[2px] flex flex-row gap-3 w-fit group"
+                className="uppercase text-everforest-fg-dim hover:text-everforest-green-bright duration-100 font-semibold tracking-[2px] text-[0.95rem] flex flex-row gap-3 w-fit group"
                 href={href}
               >
                 <FontAwesomeIcon
-                  className="w-2 inline duration-100 opacity-50"
+                  className="w-[6px] inline duration-100 opacity-50"
                   icon={faCaretRight}
                 />
                 <span className="group-hover:translate-x-1 duration-100">

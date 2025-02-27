@@ -14,7 +14,7 @@ export default function PortfolioFooter({ className, children }: Props) {
           ),
           a: ({ children, ...rest }) => (
             <a
-              className="text-everforest-green-normal font-bold"
+              className="text-everforest-green-dim font-bold"
               target="_blank"
               {...rest}
             >
