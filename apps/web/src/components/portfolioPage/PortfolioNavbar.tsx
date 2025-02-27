@@ -1,3 +1,5 @@
+import { faCaretRight } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { PortfolioSection } from "@portfolio/content/src/types/PortfolioSection";
 
 type SectionDetails = Pick<PortfolioSection, "title" | "slug">;
@@ -15,10 +17,16 @@ export default function PortfolioNavbar({ sections }: Props) {
           return (
             <li key={slug}>
               <a
-                className="uppercase text-everforest-fg-dim hover:text-everforest-green-bright font-semibold tracking-[2px] duration-100"
+                className="uppercase text-everforest-fg-dim hover:text-everforest-green-bright hover:opacity-100 duration-100 font-semibold tracking-[2px] flex flex-row gap-3 w-fit group"
                 href={href}
               >
-                {title}
+                <FontAwesomeIcon
+                  className="w-2 inline duration-100 opacity-50"
+                  icon={faCaretRight}
+                />
+                <span className="group-hover:translate-x-1 duration-100">
+                  {title}
+                </span>
               </a>
             </li>
           );
