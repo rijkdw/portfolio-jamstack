@@ -1,5 +1,5 @@
 import { fetchSections, fetchSiteData } from "@portfolio/content";
-import PortfolioPage from "_/components/PortfolioPage/PortfolioPage";
+import PortfolioPage from "_/components/PortfolioPage";
 
 export default async function Home() {
   const sections = await fetchSections();
