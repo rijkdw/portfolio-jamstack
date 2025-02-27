@@ -12,19 +12,19 @@ const EXAMPLE_SECTION_SKELETON = {
 };
 
 const EXAMPLE_MARKDOWN_ENTRY = {
-  _type: "markdownContent",
-  _key: "6d6af2de5cfc",
-  content: "Hello world!",
+  type: "markdownContent",
+  content:
+    "Hi, I'm **Rijk**.  I have a passion for developing impactful software.\\n\\nI enjoy creating seamless, user-friendly solutions that solve real problems.\\nI take pride in writing clean code that delivers value, both to customers and my fellow devs.\\nI’m eager to tackle new challenges and make a difference — one line of code at a time.",
 };
 
 const EXAMPLE_PORTFOLIO_SECTION_ENTRY = {
-  _type: "portfolioSectionEntry",
-  _key: "88bd344a22ca",
-  body: "Aaa",
-  title: "AAA",
+  type: "portfolioSectionEntry",
+  title: "Junior Developer • Omni Calculator",
+  url: "https://www.omnicalculator.com/",
+  date: "2023 – now",
+  body: "I play an integral role in developing Omni's flagship product: our **calculator widget**. I am also part of various projects, most notably our custom-built algebraic equation solver that powers our calculators' omni-directional math.",
   links: [],
-  tags: [],
-  url: "https://www.google.com",
+  tags: ["JavaScript", "TypeScript", "React", "Python", "GraphQL"],
 };
 
 describe("portfolioSectionSchema", () => {
