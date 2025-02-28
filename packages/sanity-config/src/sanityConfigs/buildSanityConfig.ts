@@ -4,7 +4,10 @@ import { visionTool } from "@sanity/vision";
 import { schemaTypes } from "../schemaTypes";
 import { EarthGlobeIcon, ListIcon } from "@sanity/icons";
 import { media } from "sanity-plugin-media";
-import { markdownSchema } from "sanity-plugin-markdown";
+
+// required to fix styles in studio when mounted
+import { markdownSchema } from "sanity-plugin-markdown/next";
+import "easymde/dist/easymde.min.css";
 
 const structure = structureTool({
   structure: (s) =>

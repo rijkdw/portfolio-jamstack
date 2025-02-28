@@ -1,6 +1,6 @@
-import StudioComponent from "./StudioComponent";
+import StudioComponent from "../components/StudioComponent";
 
-export default function StudioPage() {
+export default function StudioSubpage() {
   const {
     SANITY_PROJECT,
     SANITY_DATASET,
