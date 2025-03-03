@@ -17,3 +17,5 @@ if [ ! "$?" -eq 0 ]; then
     echo "Failed to import dataset 'development'"
     exit 1
 fi
+
+rm -f production.tar.gz

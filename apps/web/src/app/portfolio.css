@@ -3,6 +3,7 @@ body {
   background-attachment: fixed;
   min-height: 100vh;
 }
+
 * {
   scroll-behavior: smooth;
   scroll-padding-top: 60px;

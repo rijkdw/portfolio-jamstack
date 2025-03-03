@@ -14,6 +14,15 @@ export default function PortfolioSectionMarkdownContent({ children }: Props) {
               {children}
             </p>
           ),
+          a: ({ children, ...rest }) => (
+            <a
+              className="text-everforest-green-normal hover:text-everforest-green-bright duration-100 font-bold"
+              target="_blank"
+              {...rest}
+            >
+              {children}
+            </a>
+          ),
         }}
       >
         {children}

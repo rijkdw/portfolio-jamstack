@@ -43,7 +43,7 @@ export default function StudioComponentHeader({
             {homeUrl && (
               <Button
                 padding={2}
-                onClick={() => window.location.assign(homeUrl)}
+                onClick={() => window.open(homeUrl, "_blank")?.focus()}
               >
                 Home
               </Button>
