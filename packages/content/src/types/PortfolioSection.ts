@@ -1,3 +1,4 @@
+import { IconEnum } from "@portfolio/shared/src/enums/IconEnum";
 import { MarkdownContent } from "./MarkdownContent";
 
 export type PortfolioSection = {
@@ -22,5 +23,5 @@ export type PortfolioSectionEntry = {
 export type PortfolioSectionEntryLink = {
   url: string;
   text: string;
-  icon: string;
+  icon: IconEnum;
 };

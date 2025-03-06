@@ -1,9 +1,9 @@
-import { type PortfolioSectionEntry } from "@portfolio/content/src/types/PortfolioSection";
-import PortfolioSectionEntryTitle from "./PortfolioSectionEntryTitle";
-import Markdown from "react-markdown";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLink } from "@fortawesome/free-solid-svg-icons";
+import { type PortfolioSectionEntry } from "@portfolio/content/src/types/PortfolioSection";
+import iconEnumToDefinition from "_/components/common/Icon/iconEnumToDefinition";
 import Image from "next/image";
+import Markdown from "react-markdown";
+import PortfolioSectionEntryTitle from "./PortfolioSectionEntryTitle";
 
 export default function PortfolioSectionEntry(props: PortfolioSectionEntry) {
   return (
@@ -71,15 +71,18 @@ function RightPane({
       </div>
 
       {links.length > 0 && (
-        <ul className="list-none flex gap-3 gap-y-0 flex-wrap mt-3">
+        <ul className="list-none flex gap-4 gap-y-0 flex-wrap mt-3">
           {links.map((link, index) => (
             <li key={link.url + index}>
               <a
-                className="font-bold text-everforest-fg-bright hover:text-everforest-green-bright duration-100 flex flex-row gap-1"
+                className="font-bold text-everforest-fg-bright hover:text-everforest-green-bright duration-100 flex flex-row gap-1.5"
                 href={link.url}
                 target="_blank"
               >
-                <FontAwesomeIcon className="w-4" icon={faLink} />
+                <FontAwesomeIcon
+                  className="w-4"
+                  icon={iconEnumToDefinition(link.icon)}
+                />
                 <p>{link.text}</p>
               </a>
             </li>

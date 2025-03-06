@@ -23,6 +23,10 @@ const config: Config = {
           normal: "#293236"
         }
       },
+      fontFamily: {
+        sans: ['var(--font-roboto)'],
+        mono: ['var(--font-roboto-mono)'],
+      },
     },
   },
   plugins: [],
